@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Statistics Server Interface v1.0</title>
+	<LINK rel="STYLESHEET" type="text/css" href="StyleSheet.css"> 
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+	<script language="JavaScript1.2" type="text/javascript">
+		var const_string_symbol = 'string';
+		
+		function $(id) {
+			var obj = -1;
+			if (typeof id == const_string_symbol) {
+				obj = ((document.getElementById) ? document.getElementById(id) : ((document.all) ? document.all[id] : ((document.layers) ? document.layers[id] : null)));
+			}
+			return obj;
+		}
+	</script>	
+
+	<script language="JavaScript1.2" type="text/javascript">
+		var dAR = ['babylon5', 'stayme', 'cfserver2'];
+		
+		function showStatsServerById(id) {
+			var i = -1;
+			var _id = '';
+			var oObj = -1;
+			
+			for (i = 0; i < dAR.length; i++) {
+				_id = 'div_' + dAR[i];
+				oObj = $(_id);
+				if (!!oObj) {
+					oObj.style.display = ((id.toUpperCase() == dAR[i].toUpperCase()) ? 'inline' : 'none');
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+<table width="100%" cellpadding="-1" cellspacing="-1">
+	<tr>
+		<td align="center" valign="top" bgcolor="silver">
+			<h4>Statistics Server Interface v1.0</h4>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" bgcolor="silver">
+			<table width="100%" cellpadding="-1" cellspacing="-1">
+				<tr>
+					<td align="center">
+						<button class="buttonClass" onclick="showStatsServerById('babylon5'); return false;">[Babylon5]</button>
+					</td>
+					<td align="center">
+						<button class="buttonClass" onclick="showStatsServerById('stayme'); return false;">[Stayme]</button>
+					</td>
+					<td align="center">
+						<button class="buttonClass" onclick="showStatsServerById('cfserver2'); return false;">[CFServer2]</button>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="div_babylon5" style="display: none;">
+				<table width="100%" cellpadding="-1" cellspacing="-1">
+					<tr>
+						<td align="center" bgcolor="silver">
+							<span class="boldPromptTextClass">Babylon5</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<iframe id="iframe_babylon5" src="http://71.133.203.27:8080" width="100%" height="600" frameborder="1" scrolling="Auto"></iframe> <!---  --->
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="div_stayme" style="display: none;">
+				<table width="100%" cellpadding="-1" cellspacing="-1">
+					<tr>
+						<td align="center" bgcolor="silver">
+							<span class="boldPromptTextClass">Stayme</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<iframe id="iframe_babylon5" src="http://71.133.203.26:8080" width="100%" height="600" frameborder="1" scrolling="Auto"></iframe> <!---  --->
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="div_cfserver2" style="display: none;">
+				<table width="100%" cellpadding="-1" cellspacing="-1">
+					<tr>
+						<td align="center" bgcolor="silver">
+							<span class="boldPromptTextClass">CFServer2</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<iframe id="iframe_babylon5" src="http://71.133.203.28:8080" width="100%" height="600" frameborder="1" scrolling="Auto"></iframe> <!---  --->
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
